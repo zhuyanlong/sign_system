@@ -118,13 +118,13 @@ public class Login extends AppCompatActivity{
      public class MyThread implements Runnable{
          @Override
          public void run() {
-            info = WebService.executeHttpGet(username.getText().toString(),password.getText().toString());
+            info = WebService.executeLoginHttpGet(username.getText().toString(),password.getText().toString());
             handler.post(new Runnable() {
                 @Override
                 public void run() {
                     infotv.setText(info);
                     dialog.dismiss();
-                    /*try {
+                    /*try {s
                         Thread.sleep(3000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
